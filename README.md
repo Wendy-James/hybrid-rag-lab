@@ -51,6 +51,21 @@ Baseline metrics are stored in `experiments/baseline/metrics.csv` and `experimen
 
 The current dataset is a local validation set. The next milestone is to expand the corpus and compare sentence-transformer embeddings with FAISS indexing.
 
+## Project Highlights
+
+- Implements the retrieval layer directly instead of wrapping an LLM API.
+- Compares sparse retrieval, dense-style retrieval, hybrid fusion, and reranking under one evaluation script.
+- Uses Recall@K, MRR@K, and nDCG@K to make retrieval quality measurable.
+- Keeps architecture, algorithm notes, experiment logs, and interview notes in the repository.
+
+## Optimization Plan
+
+1. Replace deterministic dense vectors with sentence-transformer embeddings.
+2. Add FAISS index variants such as FlatIP, IVF, and HNSW.
+3. Add cross-encoder reranker comparison.
+4. Expand evaluation data with domain documents and harder queries.
+5. Add answer generation only after retrieval quality is stable.
+
 ## Project Structure
 
 ```text

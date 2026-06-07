@@ -31,6 +31,21 @@ PYTHONPATH=src python scripts/run_experiment.py
 | Hybrid RRF | 0.9000 | 1.0000 | 0.9226 |
 | Hybrid RRF + Reranker | 1.0000 | 1.0000 | 1.0000 |
 
+## 项目亮点
+
+- 直接实现 RAG 检索层，而不是简单调用大模型 API。
+- 在同一评估脚本下对比 BM25、稠密检索基线、Hybrid RRF 和 Reranker。
+- 使用 Recall@K、MRR@K、nDCG@K 量化检索质量。
+- 包含架构、算法、实验和面试讲解文档。
+
+## 优化方案
+
+1. 将当前稠密检索基线替换为 sentence-transformer embedding。
+2. 增加 FAISS FlatIP、IVF、HNSW 等索引对比。
+3. 增加 Cross-Encoder Reranker 实验。
+4. 扩展领域文档和更难的查询评估集。
+5. 在检索质量稳定后再加入答案生成模块。
+
 ## 面试价值
 
 这个项目可以深入讲解：

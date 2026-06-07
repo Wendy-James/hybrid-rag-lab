@@ -37,15 +37,19 @@ hybrid-rag evaluate --k 3
 The default sample corpus is intentionally small so the pipeline can run anywhere. It is used to validate retrieval logic before scaling to larger datasets.
 
 ```bash
-python -m hybrid_rag_lab.cli evaluate --k 3
+PYTHONPATH=src python scripts/run_experiment.py
 ```
 
-Reports:
+Baseline metrics are stored in `experiments/baseline/metrics.csv` and `experiments/baseline/metrics.json`.
 
-- BM25 only
-- dense hashing only
-- hybrid RRF
-- hybrid RRF + reranker
+| Mode | Recall@3 | MRR@3 | nDCG@3 |
+|---|---:|---:|---:|
+| BM25 | 0.9000 | 1.0000 | 0.9226 |
+| Dense hashing | 0.9000 | 1.0000 | 0.9226 |
+| Hybrid RRF | 0.9000 | 1.0000 | 0.9226 |
+| Hybrid RRF + reranker | 1.0000 | 1.0000 | 1.0000 |
+
+The current dataset is a local validation set. The next milestone is to expand the corpus and compare sentence-transformer embeddings with FAISS indexing.
 
 ## Project Structure
 
@@ -59,6 +63,12 @@ hybrid-rag-lab/
     algorithm.md
     experiments.md
     interview-notes.md
+  experiments/
+    baseline/
+      metrics.csv
+      metrics.json
+  scripts/
+    run_experiment.py
   src/hybrid_rag_lab/
     bm25.py
     dense.py
@@ -80,4 +90,3 @@ hybrid-rag-lab/
 ## Resume Summary
 
 Built a production-style Hybrid RAG retrieval system with BM25+dense retrieval, query rewrite, RRF fusion, reranking, and retrieval evaluation metrics including Recall@K, MRR, and nDCG.
-

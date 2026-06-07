@@ -1,0 +1,5 @@
+mode,recall@3,mrr@3,ndcg@3
+bm25,0.9,1.0,0.9226
+dense,0.9,1.0,0.9226
+hybrid,0.9,1.0,0.9226
+hybrid_rerank,1.0,1.0,1.0

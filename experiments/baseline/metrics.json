@@ -1,0 +1,29 @@
+{
+  "k": 3,
+  "rows": [
+    {
+      "mode": "bm25",
+      "recall@3": 0.9,
+      "mrr@3": 1.0,
+      "ndcg@3": 0.9226
+    },
+    {
+      "mode": "dense",
+      "recall@3": 0.9,
+      "mrr@3": 1.0,
+      "ndcg@3": 0.9226
+    },
+    {
+      "mode": "hybrid",
+      "recall@3": 0.9,
+      "mrr@3": 1.0,
+      "ndcg@3": 0.9226
+    },
+    {
+      "mode": "hybrid_rerank",
+      "recall@3": 1.0,
+      "mrr@3": 1.0,
+      "ndcg@3": 1.0
+    }
+  ]
+}

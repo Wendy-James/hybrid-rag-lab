@@ -17,7 +17,19 @@ Hybrid RAG Lab 是一个面向算法实习简历的 RAG 检索增强生成项目
 ```bash
 python -m hybrid_rag_lab.cli search --query "How does reranking improve RAG retrieval?"
 python -m hybrid_rag_lab.cli evaluate --k 3
+PYTHONPATH=src python scripts/run_experiment.py
 ```
+
+## 当前实验结果
+
+实验结果已保存到 `experiments/baseline/metrics.csv` 和 `experiments/baseline/metrics.json`。
+
+| 模式 | Recall@3 | MRR@3 | nDCG@3 |
+|---|---:|---:|---:|
+| BM25 | 0.9000 | 1.0000 | 0.9226 |
+| 稠密检索基线 | 0.9000 | 1.0000 | 0.9226 |
+| Hybrid RRF | 0.9000 | 1.0000 | 0.9226 |
+| Hybrid RRF + Reranker | 1.0000 | 1.0000 | 1.0000 |
 
 ## 面试价值
 
@@ -29,4 +41,3 @@ python -m hybrid_rag_lab.cli evaluate --k 3
 - Reranker 为什么能提升排序质量
 - Recall@K、MRR、nDCG 的区别
 - 如何从 Demo 走向可评估、可优化的工程系统
-

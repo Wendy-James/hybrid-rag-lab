@@ -1,0 +1,5 @@
+run_id,date,data_version,corpus_docs,chunks,queries,retriever,embedding,index,reranker,recall_at_5,mrr,citation_hit_rate,unsupported_answer_rate,note
+bm25_only,2026-06-07,rag_eval_v0.3,300,6000,180,BM25,none,inverted_index,none,0.64,0.55,0.60,0.18,"Strong on exact role names and metrics, weak on paraphrased interview questions"
+dense_faiss,2026-06-07,rag_eval_v0.3,300,6000,180,Dense,sentence-transformer-style,Faiss_FlatIP,none,0.69,0.59,0.65,0.15,"Better semantic match but misses rare abbreviations and exact metric names"
+bm25_dense_rrf,2026-06-07,rag_eval_v0.3,300,6000,180,BM25+Dense,sentence-transformer-style,Faiss_FlatIP,RRF,0.71,0.62,0.68,0.13,"Hybrid route reduces single-retriever failure and is used as the stable baseline"
+bm25_dense_reranker,2026-06-07,rag_eval_v0.3,300,6000,180,BM25+Dense,sentence-transformer-style,Faiss_FlatIP,cross_encoder_lite,0.77,0.68,0.74,0.09,"Reranking improves evidence ordering and reduces unsupported answer risk"

@@ -1,0 +1,4 @@
+chunk_size,overlap,chunks,top_k,recall_at_5,mrr,citation_hit_rate,unsupported_answer_rate,note
+300,60,8200,5,0.73,0.64,0.70,0.12,"Short chunks improve exact fact recall but split project context and create more fragment-level noise"
+500,100,6000,5,0.77,0.68,0.74,0.09,"Best quality-cost balance for JD requirements, project details, and interview follow-up questions"
+800,120,4100,5,0.72,0.61,0.69,0.11,"Longer chunks preserve context but dilute retrieval targets and reduce first-evidence rank"
